@@ -40,6 +40,22 @@ public class Main {
         }
     }
 
+    // task 3
+
+    public static int calculateDeliveryDaysByDistance (int distance) {
+        int deliveryDays = 0;
+        if (distance <= 20) {
+            deliveryDays += 1;
+        } else if (distance <= 60) {
+            deliveryDays += 2;
+        } else if (distance <= 100) {
+            deliveryDays += 3;
+        } else {
+            System.out.println("Доставки нет");
+        }
+        return deliveryDays;
+    }
+
     public static void main(String[] args) {
         System.out.println("Задача 1");
         int year = 2021;
@@ -48,5 +64,8 @@ public class Main {
         int phoneYear = 2026;
         int os = 0;
         isAppRecommended(os, phoneYear);
+        System.out.println("\nЗадача 3");
+        int deliveryDistance = 95;
+        System.out.println("Потребуется дней: " + calculateDeliveryDaysByDistance(deliveryDistance));
     }
 }
