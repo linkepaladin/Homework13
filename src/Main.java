@@ -52,6 +52,7 @@ public class Main {
             deliveryDays += 3;
         } else {
             System.out.println("Доставки нет");
+            return -1;
         }
         return deliveryDays;
     }
@@ -62,10 +63,11 @@ public class Main {
         isLeapYear(year);
         System.out.println("\nЗадача 2");
         int phoneYear = 2026;
-        int os = 0;
-        isAppRecommended(os, phoneYear);
+        int ios = 0;
+        int android = 1;
+        isAppRecommended(ios, phoneYear);
         System.out.println("\nЗадача 3");
-        int deliveryDistance = 95;
+        int deliveryDistance = 101;
         System.out.println("Потребуется дней: " + calculateDeliveryDaysByDistance(deliveryDistance));
     }
 }
