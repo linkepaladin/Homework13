@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 public class Main {
 
     // task 1
@@ -14,6 +15,7 @@ public class Main {
 
     public static void isAppRecommended(int os, int phoneYear) {
         int baseYear = 2015;
+        int currentYear = LocalDate.now().getYear();
         if (phoneYear < baseYear) {
             switch (os) {
                 case 0:
@@ -25,7 +27,7 @@ public class Main {
                 default:
                     System.out.println("Для данной операционной системы нет приложения");
             }
-        } else {
+        } else if (phoneYear <= currentYear){
             switch (os) {
                 case 0:
                     System.out.println("Установите обычную версию приложения для iOS по ссылке");
@@ -36,6 +38,8 @@ public class Main {
                 default:
                     System.out.println("Для данной операционной системы нет приложения");
             }
+        } else {
+            System.out.println("Это устройство выпустят через " + (phoneYear - currentYear) + " лет");
         }
     }
 
@@ -61,10 +65,10 @@ public class Main {
         int year = 2021;
         isLeapYear(year);
         System.out.println("\nЗадача 2");
-        int phoneYear = 2013;
+        int phoneYear = 2010;
         int ios = 0;
         int android = 1;
-        isAppRecommended(ios, phoneYear);
+        isAppRecommended(android, phoneYear);
         System.out.println("\nЗадача 3");
         int deliveryDistance = 101;
         System.out.println("Потребуется дней: " + calculateDeliveryDaysByDistance(deliveryDistance));
