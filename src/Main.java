@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 public class Main {
 
     // task 1
@@ -14,8 +13,8 @@ public class Main {
     // task 2
 
     public static void isAppRecommended(int os, int phoneYear) {
-        int currentYear = LocalDate.now().getYear();
-        if (phoneYear < currentYear) {
+        int baseYear = 2015;
+        if (phoneYear < baseYear) {
             switch (os) {
                 case 0:
                     System.out.println("Установите облегченную версию приложения для iOS по ссылке");
@@ -62,7 +61,7 @@ public class Main {
         int year = 2021;
         isLeapYear(year);
         System.out.println("\nЗадача 2");
-        int phoneYear = 2026;
+        int phoneYear = 2013;
         int ios = 0;
         int android = 1;
         isAppRecommended(ios, phoneYear);
